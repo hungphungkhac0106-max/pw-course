@@ -67,7 +67,7 @@ Thêm dấu /* dòng 1, dòng 2 */ => comment nhiều dòng
 **Biến** là thay đổi được giá trị\
 **Khai báo biến**:\
 `let <tên biến> = <"giá trị">;`\
-ex: let <myName> = "Hưng";\
+ex: let myName = "Hưng";\
 **Hằng** là giá trị cố định, ko thay đổi\
 `const <tên hằng> = <"giá trị">;`
 
@@ -100,7 +100,7 @@ có 8 kiểu dữ liệu, chia thành 2 nhóm chính:
 
 ## Toán tử toán học
 - cộng, trừ, nhân, chia...\
-`const ketQua = a / b;\`
+`const ketQua = a / b;`
 `console.log(ketQua);`
 
 ## Toán tử logic
@@ -117,3 +117,39 @@ có 8 kiểu dữ liệu, chia thành 2 nhóm chính:
     - Postfix: toán tử nằm ở phía sau - trả về trước, tăng sau
         - x++;
         - x--;
+
+## Toán tử chia dư (%)
+- % sẽ trả về phần dư của phép tính\
+    - ví dụ: 3%3 = 0 (vì 3 chia hết cho 3, dư 0)
+    - 3%2 = 1 (vì 3 ko chia hết cho 2, dư 1)
+    - 1%2 = 1 (vì 1 ko chia hết cho 2, dư 1)
+- Ứng dụng tìm số chẵn, lẻ:
+    - Nếu là số lẻ, chia dư cho 2 =1: x % 2 === 1
+    - Nếu là số chẵn, chia dư cho 2 = 0: x % 2 === 0     
+
+## In kết hợp giá trị chuỗi và biến với console.log()
+- Cách 1: `console.log("message" + tên_biến)`
+- Cách 2: `console.log("message", tên_biến)`
+- Cách 3: nối chuỗi với toán tử +\
+
+`const str1 = "Hello";
+const str2 = "playwright Viet Nam"\
+console.log(str1 + str2);`  
+
+## Let, Const, Var
+- Var: cũng là một biến, phạm vi theo hàm, không bị giới hạn bởi if, for, while. Biến khai báo trong if vẫn sống ở ngoài
+- Hoisting: Var dùng trước khi khai báo vẫn chạy được. Js đẩy phần khai báo biến Var lên đầu hàm, nhưng giá trị thì chưa được gán. 
+- Var khi khai báo lại đè lên nhau mà ko cảnh báo
+    - vd: var user = "admin";
+    - var user = "guest"
+    - console.log(user); => "guest" (ko báo lỗi)
+
+## Git - unstage
+- Thao tác đưa 1 file đã commit lên vùng khác ngược về vùng trước đó
+- `git restore --stage <file name>`
+- `git restore --stage <file name1> <file name 2> <file name 3>`
+- `git restore --stage .` => restore toàn bộ từ staging về working directory
+
+## Git - undo commit message
+- Thay đổi message của commit mới nhất
+- `git commit --amend -m"message"`

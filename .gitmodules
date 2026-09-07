@@ -1,0 +1,3 @@
+[submodule "test/lesson-023"]
+	path = test/lesson-023
+	url = git@github.com:hungphungkhac0106-max/pw-course.git
