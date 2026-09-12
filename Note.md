@@ -150,6 +150,68 @@ console.log(str1 + str2);`
 - `git restore --stage <file name1> <file name 2> <file name 3>`
 - `git restore --stage .` => restore toàn bộ từ staging về working directory
 
+## Git - un-commit
+- Đưa nội dung commit cuối về vùng **staging** 
+    - `git reset --soft HEAD~1`
+- Đưa nội dung bao nhiêu commit kế cuối về vùng **staging**
+    - `git reset --soft HEAD~3`
+- Đưa nội dung commit cuối thằng từ vùng **Repository** về vùng **Working directory** 
+    - `git reset HEAD~1`
+- Commit đầu tiên không thể bị reset
+- Nếu muốn reset thì xoá thư mục `.git` đi rồi init lại
+    
 ## Git - undo commit message
 - Thay đổi message của commit mới nhất
 - `git commit --amend -m"message"`
+
+## JS - câu điều kiện
+- Cú pháp: `if (<điều kiện>) { 
+// code...
+}`
+- Kết hợp nhiều điều kiện: `if (<điều kiện 1> && (And)/|| (OR) <điều kiện 2>) {
+// code ...
+}`
+
+## JS - vòng lặp
+- Vòng lặp dùng để **lặp lại 1 đoạn logic**. Có thể lặp **một số lần nhất định**, hoặc lặp vô hạn, tuỳ theo **điều kiện dừng**.
+- Các loại vòng lặp:
+    - for (i)
+    - for (of)
+    - for (each)
+    - for (in)
+    - while
+    - do...while
+### Cú pháp vòng lặp for (i)
+- `for (<điều kiện khởi tạo>; <điều kiện lặp>; <cập nhật>) {
+// code }`
+- Trong đó:
+    - **Điều kiện khởi tạo**: chạy **một lần duy nhất**, khi **vòng lặp bắt đầu**.
+    - Điều kiện lặp: nếu **đúng** thì **chạy tiếp**, **sai** thì **dừng**
+    - Cập nhật: chạy vào **mỗi cuối vòng lặp**, để thay đổi giá trị của biến đếm.
+- Vd: `for (let i = 0; i < 5; i++) {
+console.log("Xin chào!")
+}` => kết quả: in ra 5 lần text "Xin chào"
+    - Giải thích: 
+        - Vòng 1: (i = 0)
+        - Vòng 2: (i = 1)
+            - Kiểm tra: i < 5 => đúng => chạy
+            - Chạy logic: console.log...
+            - Cập nhật: i++ => i = 2
+        - Vòng 3 & 4 & 5: tương tự vòng 2
+        - Vòng 6: (i = 5)
+            - Kiểm tra: i < 5 => sai => dừng lại. Thoát khỏi vòng lặp 
+
+## JS - Conventions
+- Convention: quy tắc, giúp cho:
+    - Code theo format chung dễ nhìn
+    - Người khác trong team dễ đọc code
+- Một số convention phổ biến:
+    - **snake_case**: viết bằng chữ thường, cách nhau = dấu `_`
+    - **kebab-case**: viết bằng chữ thường, cách nhau = dấu `-`
+    - **camelCase**: chữ đầu viết thường, các chữ sau viết hoa chữ cái đầu, vd: `tenBien`                
+    - **PascalCase**: tất cả các chữ cái đầu viết hoa, vd: `TenBien`
+    - **UPPER_CASE (SCREAMING_SNAKE_CASE)**: tương tự snake_case, viết hoa tất cả các chữ
+- Sử dụng trong lớp PW K25:
+    - kebab-case: đặt tên file, folder
+    - camelCase: đặt tên biến, hàm
+    - PascalCase: đặt tên class    
